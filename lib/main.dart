@@ -32,6 +32,7 @@ class ForgetPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      background Color: const Color.fromARGB(255, 194, 230, 195)
       appBar: AppBar(
         title: const Text('Forget Password'),
       ),
