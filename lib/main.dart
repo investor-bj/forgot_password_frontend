@@ -94,7 +94,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(null),
                     ),
-                    child: const Text('Continue'),
+                    child: const Text('Click to Continue'),
                   ),
                 ],
               ),
