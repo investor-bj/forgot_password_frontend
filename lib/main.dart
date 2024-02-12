@@ -60,7 +60,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                   controller: phoneController,
                   decoration: const InputDecoration(
                     labelText: 'Phone Number',
-                    hintText: 'Enter your phone number',
+                    hintText: 'Enter your mobile number',
                   ),
                   keyboardType: TextInputType.phone,
                 ),
