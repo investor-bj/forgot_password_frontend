@@ -51,8 +51,8 @@ class ForgetPasswordScreen extends StatelessWidget {
                 TextFormField(
                   controller: emailController,
                   decoration: const InputDecoration(
-                    labelText: 'Email',
-                    hintText: 'Enter your email',
+                    labelText: 'Email Address',
+                    hintText: 'pls enter your email address',
                   ),
                   keyboardType: TextInputType.emailAddress,
                 ),
