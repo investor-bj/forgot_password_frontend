@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Forget Password',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color.fromARGB(255, 112, 228, 176)),
+        colorScheme:
+            ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 202, 238, 222)),
         useMaterial3: true,
       ),
       home: ForgetPasswordScreen(),
@@ -32,12 +32,22 @@ class ForgetPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      background Color: const Color.fromARGB(255, 194, 230, 195)
+      backgroundColor: Colors.green[99],
       appBar: AppBar(
-        title: const Text('forgot your password?'),
+        leading: IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.arrow_back),
+        ),
       ),
       body: Stack(
         children: [
+          Text(
+            "Forgot Password?",
+            style: TextStyle(
+              fontSize: 60,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
@@ -48,22 +58,44 @@ class ForgetPasswordScreen extends StatelessWidget {
                   style: TextStyle(fontSize: 18),
                 ),
                 const SizedBox(height: 20),
-                TextFormField(
-                  controller: emailController,
-                  decoration: const InputDecoration(
-                    labelText: 'Email Address',
-                    hintText: 'pls enter your email address',
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                  keyboardType: TextInputType.emailAddress,
+                  child: TextFormField(
+                    controller: emailController,
+                    decoration: InputDecoration(
+                      labelText: 'Email',
+                      hintText: 'Enter your email',
+                      prefixIcon: Icon(
+                        Icons.message,
+                        color: Colors.greenAccent,
+                      ),
+                    ),
+                    keyboardType: TextInputType.emailAddress,
+                  ),
                 ),
                 const SizedBox(height: 20),
-                TextFormField(
-                  controller: phoneController,
-                  decoration: const InputDecoration(
-                    labelText: 'Phone Number',
-                    hintText: 'Enter your mobile number',
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                  keyboardType: TextInputType.phone,
+                  child: TextFormField(
+                    controller: phoneController,
+                    decoration: InputDecoration(
+                      labelText: 'Phone Number',
+                      hintText: 'Enter your phone number',
+                      prefixIcon: Icon(
+                        Icons.phone,
+                        color: Colors.greenAccent,
+                      ),
+                    ),
+                    keyboardType: TextInputType.phone,
+                  ),
                 ),
                 const SizedBox(height: 20),
               ],
@@ -71,32 +103,43 @@ class ForgetPasswordScreen extends StatelessWidget {
           ),
           Positioned(
             left: 0,
-            right: 0,
-            bottom: 0,
-            child: Container(
-              color: Colors.green,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      // Handle password reset logic here
-                      // Check if email or phone is provided and send reset accordingly
-
-                      // Navigate to the next screen
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const ResetPasswordScreen(),
-                        ),
-                      );
-                    },
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(null),
+            right: 10,
+            bottom: 20,
+            child: Padding(
+              padding: const EdgeInsets.only(
+                left: 30,
+                right: 30,
+              ),
+              child: Container(
+                width: 40,
+                height: 60,
+                color: Color.fromARGB(255, 35, 134, 86),
+                child:
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Text(
+                    'Continue',
+                    style: TextStyle(
+                      color: Colors.white,
                     ),
-                    child: const Text('Click to Proceed'),
                   ),
-                ],
+                  // ElevatedButton(
+                  // onPressed: () {
+                  // Handle password reset logic here
+                  // Check if email or phone is provided and send reset accordingly
+
+                  // Navigate to the next screen
+                  //   Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //       builder: (context) => const ResetPasswordScreen(),
+                  //     ),
+                  //   );
+                  // },
+                  // style: ButtonStyle(
+                  //   backgroundColor: MaterialStateProperty.all(null),
+                  // ),
+                  // child: const Text('Continue'),
+                ]),
               ),
             ),
           ),
@@ -107,7 +150,7 @@ class ForgetPasswordScreen extends StatelessWidget {
 }
 
 class ResetPasswordScreen extends StatelessWidget {
-  const ResetPasswordScreen({super.key});
+  const ResetPasswordScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
